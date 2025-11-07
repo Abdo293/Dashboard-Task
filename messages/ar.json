@@ -1,0 +1,158 @@
+{
+  "sidebar": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "addProducts": "اضافة منتج"
+  },
+  "addProduct": {
+    "title": "إضافة منتجات",
+    "productNameAr": "اسم المنتج (عربي)",
+    "productNameEn": "اسم المنتج (إنجليزي)",
+    "productDescription": "الوصف (عربي)",
+    "productDescriptionEn": "الوصف (إنجليزي)",
+    "productPrice": "سعر المنتج",
+    "priceAfterDiscount": "السعر بعد الخصم",
+    "discount": "الخصم (%)",
+    "numberOfPieces": "عدد القطع",
+    "productVisibility": "ظهور المنتج",
+    "visible": "مرئي",
+    "hidden": "مخفي",
+    "required": "*",
+    "placeholders": {
+      "productNameAr": "أدخل اسم المنتج بالعربية",
+      "productNameEn": "أدخل اسم المنتج بالإنجليزية",
+      "productDescriptionAr": "أدخل وصف المنتج بالعربية",
+      "productDescriptionEn": "أدخل وصف المنتج بالإنجليزية",
+      "price": "0.00",
+      "pieces": "0",
+      "selectVisibility": "اختر حالة الظهور"
+    },
+    "hints": {
+      "productName": "لا تتجاوز 20 حرفاً عند إدخال اسم المنتج.",
+      "productDescription": "لا تتجاوز 100 حرف عند إدخال وصف المنتج."
+    },
+    "buttons": {
+      "addProduct": "إضافة منتج",
+      "adding": "جاري الإضافة..."
+    },
+    "messages": {
+      "addSuccess": "تمت إضافة المنتج بنجاح!",
+      "saveSuccess": "تم حفظ المنتج بنجاح!"
+    },
+    "errors": {
+      "productNameArRequired": "اسم المنتج (عربي) مطلوب",
+      "productNameEnRequired": "اسم المنتج (إنجليزي) مطلوب",
+      "descriptionArRequired": "الوصف (عربي) مطلوب",
+      "descriptionEnRequired": "الوصف (إنجليزي) مطلوب",
+      "numberOfPiecesInvalid": "يجب أن يكون عدد القطع أكبر من 0",
+      "productPriceInvalid": "يجب أن يكون سعر المنتج أكبر من 0",
+      "priceAfterDiscountInvalid": "يجب أن يكون السعر بعد الخصم أكبر من 0",
+      "discountInvalid": "يجب أن يكون الخصم 0 أو أكبر"
+    }
+  },
+  "productsList": {
+    "title": "المنتجات",
+    "addProductDescription": "أكمل تفاصيل المنتج أدناه لإضافة منتج جديد إلى مخزونك",
+    "subtitle": "إدارة مخزون المنتجات",
+    "addProduct": "إضافة منتج",
+    "searchPlaceholder": "البحث عن المنتجات بالاسم...",
+    "loadingProducts": "جاري تحميل المنتجات...",
+    "noProductsFound": "لم يتم العثور على منتجات",
+    "showingProducts": "عرض {filtered} من {total} منتج",
+    "deleteConfirm": "هل أنت متأكد من حذف هذا المنتج؟",
+    "table": {
+      "product": "المنتج",
+      "productId": "معرف المنتج",
+      "price": "السعر",
+      "quantity": "الكمية",
+      "discount": "الخصم",
+      "status": "الحالة",
+      "finalPrice": "السعر النهائي",
+      "action": "الإجراء"
+    },
+    "status": {
+      "inStock": "متوفر",
+      "outOfStock": "غير متوفر"
+    },
+    "editDialog": {
+      "title": "تعديل المنتج",
+      "description": "قم بتحديث معلومات المنتج أدناه",
+      "productNameAr": "اسم المنتج (عربي)",
+      "productNameEn": "اسم المنتج (إنجليزي)",
+      "price": "السعر",
+      "quantity": "الكمية",
+      "discount": "الخصم (%)",
+      "descriptionAr": "الوصف (عربي)",
+      "descriptionEn": "الوصف (إنجليزي)",
+      "cancel": "إلغاء",
+      "save": "حفظ التغييرات"
+    },
+    "deleteDialog": {
+      "title": "هل أنت متأكد؟",
+      "description": "لا يمكن التراجع عن هذا الإجراء. سيتم حذف المنتج نهائياً من النظام.",
+      "cancel": "إلغاء",
+      "delete": "حذف"
+    }
+  },
+  "analytics": {
+    "title": "لوحة التحليلات",
+    "subtitle": "نظرة شاملة على بيانات منتجاتك",
+    "loadingAnalytics": "جاري تحميل التحليلات...",
+    "stats": {
+      "totalProducts": "إجمالي المنتجات",
+      "totalValue": "القيمة الإجمالية للمخزون",
+      "averagePrice": "متوسط السعر",
+      "outOfStock": "غير متوفر"
+    },
+    "charts": {
+      "priceDistribution": {
+        "title": "توزيع الأسعار",
+        "description": "عدد المنتجات حسب نطاق السعر"
+      },
+      "stockStatus": {
+        "title": "حالة المخزون",
+        "description": "نظرة عامة على توافر المنتجات",
+        "inStock": "متوفر",
+        "outOfStock": "غير متوفر"
+      },
+      "topProducts": {
+        "title": "أعلى 10 منتجات من حيث القيمة",
+        "description": "المنتجات الأعلى قيمة في المخزون"
+      },
+      "discountAnalysis": {
+        "title": "توزيع الخصومات",
+        "description": "المنتجات حسب نسبة الخصم"
+      },
+      "inventoryValue": {
+        "title": "قيمة المخزون حسب المنتج",
+        "description": "القيمة الإجمالية (السعر × الكمية) لكل منتج",
+        "value": "القيمة"
+      },
+      "quantityDistribution": {
+        "title": "توزيع الكميات",
+        "description": "عدد المنتجات حسب نطاق الكمية"
+      }
+    },
+    "priceRanges": {
+      "under50": "$0 - $50",
+      "range50to100": "$50 - $100",
+      "range100to200": "$100 - $200",
+      "range200to500": "$200 - $500",
+      "above500": "$500+"
+    },
+    "discountRanges": {
+      "noDiscount": "بدون خصم",
+      "range1to10": "1% - 10%",
+      "range10to20": "10% - 20%",
+      "range20to30": "20% - 30%",
+      "above30": "30%+"
+    },
+    "quantityRanges": {
+      "under10": "0 - 10",
+      "range10to50": "10 - 50",
+      "range50to100": "50 - 100",
+      "range100to500": "100 - 500",
+      "above500": "500+"
+    }
+  }
+}
