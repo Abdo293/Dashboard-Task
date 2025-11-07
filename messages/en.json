@@ -18,6 +18,7 @@
     "visible": "Visible",
     "hidden": "Hidden",
     "required": "*",
+    "productLocation": "Location",
     "placeholders": {
       "productNameAr": "Enter product name in Arabic",
       "productNameEn": "Enter product name in English",
@@ -85,7 +86,8 @@
       "descriptionAr": "Description (Arabic)",
       "descriptionEn": "Description (English)",
       "cancel": "Cancel",
-      "save": "Save Changes"
+      "save": "Save Changes",
+      "location": "Location"
     },
     "deleteDialog": {
       "title": "Are you sure?",

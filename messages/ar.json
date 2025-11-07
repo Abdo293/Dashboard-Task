@@ -18,6 +18,7 @@
     "visible": "مرئي",
     "hidden": "مخفي",
     "required": "*",
+    "productLocation": "الموقع",
     "placeholders": {
       "productNameAr": "أدخل اسم المنتج بالعربية",
       "productNameEn": "أدخل اسم المنتج بالإنجليزية",
@@ -85,7 +86,8 @@
       "descriptionAr": "الوصف (عربي)",
       "descriptionEn": "الوصف (إنجليزي)",
       "cancel": "إلغاء",
-      "save": "حفظ التغييرات"
+      "save": "حفظ التغييرات",
+      "location": "الموقع"
     },
     "deleteDialog": {
       "title": "هل أنت متأكد؟",

@@ -17,43 +17,13 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { createProduct } from "@/store/slices/productsSlice";
 import type { CreateProductData } from "@/types/productTypes.ts";
 import { useLocale, useTranslations } from "next-intl";
-
-interface FormData {
-  product_name: string;
-  product_name_en: string;
-  product_description: string;
-  product_description_en: string;
-  number_of_pieces: string;
-  product_price: string;
-  price_after_discount: string;
-  discount: string;
-  product_hidden: "yes" | "no";
-}
-
-interface FormErrors {
-  product_name?: string;
-  product_name_en?: string;
-  product_description?: string;
-  product_description_en?: string;
-  number_of_pieces?: string;
-  product_price?: string;
-  price_after_discount?: string;
-  discount?: string;
-}
-
-interface AddProductFormProps {
-  onSuccess?: () => void;
-}
-
-interface InputProps {
-  value: string;
-  onChange: (value: string) => void;
-  error?: string;
-  label: string;
-  placeholder: string;
-  maxLength?: number;
-  hint?: string;
-}
+import {
+  AddProductFormProps,
+  FormErrors,
+  InputProps,
+  FormData,
+} from "@/types/AddProductsTypes";
+import LocationMapPicker from "./LocationMapPicker";
 
 const ProductNameInput: React.FC<InputProps> = ({
   value,
@@ -378,6 +348,13 @@ const AddProductForm: React.FC<AddProductFormProps> = ({ onSuccess }) => {
         placeholder={t("placeholders.productDescriptionEn")}
         error={errors.product_description_en}
         maxLength={100}
+      />
+
+      <LocationMapPicker
+        label={t("productLocation")} // Add translation
+        value={formData.location}
+        onChange={(location) => setFormData((prev) => ({ ...prev, location }))}
+        className="space-y-2"
       />
 
       <Button

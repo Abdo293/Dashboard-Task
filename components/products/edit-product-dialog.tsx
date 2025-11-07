@@ -16,22 +16,12 @@ import {
 import { useAppDispatch } from "@/store/hooks";
 import { updateProduct, fetchProducts } from "@/store/slices/productsSlice";
 import { useTranslations, useLocale } from "next-intl";
-import { Product } from "@/types/productTypes.ts";
+import { EditForm, EditProductDialogProps } from "@/types/EditProductsTypes";
+import LocationMapPicker from "./LocationMapPicker";
 
-interface EditProductDialogProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  product: Product | null;
-}
-
-interface EditForm {
-  product_name: string;
-  product_name_en: string;
-  product_price: string;
-  number_of_pieces: string;
-  discount: string;
-  product_description: string;
-  product_description_en: string;
+// Extended EditForm interface to include location (for UI only)
+interface ExtendedEditForm extends EditForm {
+  location?: { lat: number; lng: number };
 }
 
 const EditProductDialog: React.FC<EditProductDialogProps> = ({
@@ -44,7 +34,7 @@ const EditProductDialog: React.FC<EditProductDialogProps> = ({
   const locale = useLocale();
   const isRTL = locale === "ar";
 
-  const [editForm, setEditForm] = React.useState<EditForm>({
+  const [editForm, setEditForm] = React.useState<ExtendedEditForm>({
     product_name: "",
     product_name_en: "",
     product_price: "",
@@ -52,6 +42,7 @@ const EditProductDialog: React.FC<EditProductDialogProps> = ({
     discount: "",
     product_description: "",
     product_description_en: "",
+    location: undefined,
   });
 
   React.useEffect(() => {
@@ -64,9 +55,14 @@ const EditProductDialog: React.FC<EditProductDialogProps> = ({
         discount: product.discount.toString(),
         product_description: product.product_description || "",
         product_description_en: product.product_description_en || "",
+        location: undefined, // Reset location each time dialog opens
       });
     }
   }, [product, open]);
+
+  const handleLocationChange = (location: { lat: number; lng: number }) => {
+    setEditForm({ ...editForm, location });
+  };
 
   const handleEditSubmit = async () => {
     if (!product) return;
@@ -78,6 +74,7 @@ const EditProductDialog: React.FC<EditProductDialogProps> = ({
         (productPrice - (productPrice * productDiscount) / 100).toFixed(2)
       );
 
+      // Location is stored in form state but NOT sent to API
       await dispatch(
         updateProduct({
           product_id: product.product_id!,
@@ -90,6 +87,7 @@ const EditProductDialog: React.FC<EditProductDialogProps> = ({
           product_hidden: product.product_hidden ?? false,
           product_description: editForm.product_description,
           product_description_en: editForm.product_description_en,
+          // Note: location is NOT included in the API call
         })
       ).unwrap();
       onOpenChange(false);
@@ -102,7 +100,7 @@ const EditProductDialog: React.FC<EditProductDialogProps> = ({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="max-w-2xl max-h-[90vh] overflow-y-auto"
+        className="max-w-3xl max-h-[90vh] overflow-y-auto"
         dir={isRTL ? "rtl" : "ltr"}
       >
         <DialogHeader>
@@ -219,6 +217,13 @@ const EditProductDialog: React.FC<EditProductDialogProps> = ({
               dir="ltr"
             />
           </div>
+
+          {/* Location Picker - for UI display only, not sent to API */}
+          <LocationMapPicker
+            label={t("editDialog.location") || "Product Location"}
+            value={editForm.location}
+            onChange={handleLocationChange}
+          />
         </div>
         <DialogFooter className={isRTL ? "flex-row-reverse" : ""}>
           <Button variant="outline" onClick={() => onOpenChange(false)}>
